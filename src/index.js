@@ -8,8 +8,6 @@ const request = require('request').defaults({ encoding: null });
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const prefixes = ['<@544450644015185940>', '<@!544450644015185940>'];
-
 const express = require('express');
 const app = express();
 
