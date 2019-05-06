@@ -19,7 +19,7 @@ Here are some perks you can get:
 - Premium on another bot
 - Priority for feature requests
 ### Bot invite link
-https://discordapp.com/oauth2/authorize?client_id=556646205011001345&scope=bot&permissions=8
+https://discordapp.com/api/oauth2/authorize?client_id=568210750393417740&scope=bot&permissions=8
 ### Server invite link
 https://discord.gg/TYe3U4w
 
