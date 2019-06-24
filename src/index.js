@@ -100,8 +100,7 @@ client.on('message', message => {
                   }
                 
                   embed
-                    .setTitle("Possible Pokemon: " + result)
-                    .setFooter("Want this bot in your server? Do @" + client.user.tag + " info.");
+                    .addField("Possible Pokemon: " + result, "Want this bot in your server? Do @" + client.user.tag + " info.\nYou can also self-host the bot: https://github.com/CHamburr/PokeAssistant");
                   message.channel.send(embed);
                 
                   console.log("[" + message.guild.name + "/#" + message.channel.name + "] " + result);
