@@ -17,7 +17,8 @@ module.exports.run = async (client, message, args) => {
   
   embed
     .addField("General", generalArr.map(g => g).join('\n'), true)
-    .addField("Debug", debugArr.map(g => g).join('\n', true));
+    .addField("Debug", debugArr.map(g => g).join('\n', true))
+    .addField("Server invite", "https://discord.gg/TYe3U4w");
   
   if (!args[0]) {
     message.channel.send(embed);
