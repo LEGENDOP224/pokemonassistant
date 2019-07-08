@@ -104,7 +104,7 @@ client.on('message', message => {
                     Jimp.loadFont(Jimp.FONT_SANS_64_WHITE).then(font => {
                       Jimp.loadFont(Jimp.FONT_SANS_32_WHITE).then(font2 => {
                         img.print(font, 0, 50, {
-                          text: "Pokemon Name",
+                          text: result,
                           alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER
                         }, img.bitmap.width, img.bitmap.height);
                         img.print(font2, 0, img.bitmap.height - 100, {
