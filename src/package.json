@@ -12,7 +12,8 @@
     "imghash": "^0.0.3",
     "request": "^2.88.0",
     "moment": "^2.24.0",
-    "moment-duration-format": "^2.2.2"
+    "moment-duration-format": "^2.2.2",
+    "jimp": "^0.6.4"
   },
   "engines": {
     "node": "8.x"
