@@ -3,6 +3,7 @@ const http = require('http');
 
 const db = require('./Pokemons.json')
 const imghash = require('imghash');
+const Jimp = require('jimp');
 const request = require('request').defaults({ encoding: null });
 
 const Discord = require('discord.js');
@@ -48,7 +49,7 @@ client.loadCommands();
 client.on('ready', () => {
   console.log(`READY Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
   client.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`, "Ready", "event");
-  client.user.setActivity(`discord.gg/TYe3U4w`);
+  client.user.setActivity(`@${client.user.username} info`);
 });
 
 client.on('error', error => {
@@ -99,9 +100,24 @@ client.on('message', message => {
                     return message.channel.send(embed);
                   }
                 
-                  embed
-                    .addField("Possible Pokemon: " + result, "Want this bot in your server? Do @" + client.user.tag + " info.\nYou can also self-host the bot: https://github.com/CHamburr/PokeAssistant");
-                  message.channel.send(embed);
+                  new Jimp(1024, 256, "#303030", (err, img) => {
+                    Jimp.loadFont(Jimp.FONT_SANS_64_WHITE).then(font => {
+                      Jimp.loadFont(Jimp.FONT_SANS_32_WHITE).then(font2 => {
+                        img.print(font, 0, 50, {
+                          text: "Pokemon Name",
+                          alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER
+                        }, img.bitmap.width, img.bitmap.height);
+                        img.print(font2, 0, img.bitmap.height - 100, {
+                          text: "Want this bot in your server? Go to https://discord.gg/TYe3U4w or https://github.com/CHamburr/PokeAssistant for more information.",
+                          alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER
+                        }, img.bitmap.width, img.bitmap.height);
+                        img.getBufferAsync("image/png")
+                          .then(res => {
+                              message.channel.send({files:[{attachment: res, name: "file.png"}]});
+                          });
+                      });
+                    });
+                  });
                 
                   console.log("[" + message.guild.name + "/#" + message.channel.name + "] " + result);
                 })
