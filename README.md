@@ -16,13 +16,9 @@ Firstly, share it. This is extremely important for the bot to grow.
 And secondly, support me financially. Look at your PayPal/bank balance/anything, do you have that $1 to spare for me? Yes, even $1 helps. And of course, the more, the better. If you're interested, please drop me a DM. 
 Here are some perks you can get:
 - Private bot for your server
-- Premium on another bot
 - Priority for feature requests
-### Bot invite link
-https://discordapp.com/api/oauth2/authorize?client_id=568210750393417740&scope=bot&permissions=8
 ### Server invite link
 https://discord.gg/TYe3U4w
-
 ## Self-hosting Guide
 You surely want a private bot for your server, now that you have got the source code, you wonder: how do I keep the bot up 24/7?
 So here the guide exists to teach you how.
